@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'header',
+  selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
- title: string = 'Task Tracker';
+  title: string = 'Task Tracker';
+  
+  toggleBtn() {
+    console.log('toggle');
+  }
 }
