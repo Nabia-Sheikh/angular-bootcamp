@@ -16,4 +16,9 @@ export class TasksComponent {
     day: 'May 5th at 2:30pm',
     reminder: true,
   }
+
+  constructor() {
+    console.log('constructor ran');
+  }
+  
 }
