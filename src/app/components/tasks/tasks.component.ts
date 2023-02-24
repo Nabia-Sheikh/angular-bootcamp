@@ -28,4 +28,8 @@ export class TasksComponent {
     task.reminder = !task.reminder;
     this.tasksService.updateTask(task).subscribe();
   }
+
+  addTask(task: Task) {
+    this.tasksService.addTask(task).subscribe((task) => (this.tasks.push(task)));
+  }
 }
