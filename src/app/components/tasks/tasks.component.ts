@@ -9,6 +9,7 @@ import { Task } from 'src/app/Task';
 })
 export class TasksComponent {
   tasks: Task[] = [];
+  loading: boolean = true;
 
   constructor(private tasksService: TasksService) {}
 
