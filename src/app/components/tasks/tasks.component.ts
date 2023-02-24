@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TASKS } from 'src/app/mockTasks';
+import { TasksService } from 'src/app/services/tasks.service';
 import { Task } from 'src/app/Task';
 
 @Component({
@@ -8,17 +8,11 @@ import { Task } from 'src/app/Task';
   styleUrls: ['./tasks.component.css'],
 })
 export class TasksComponent {
-  tasks: Task[] = TASKS;
+  tasks: Task[] = [];
 
-  myTask : Task =  {
-    id: 1,
-    text: 'Doctors Appointment',
-    day: 'May 5th at 2:30pm',
-    reminder: true,
-  }
-
-  constructor() {
-    console.log('constructor ran');
-  }
+  constructor(private tasksService: TasksService) { }
   
+  ngOnInit() {
+    this.tasksService.getTasks().subscribe((tasks) => (this.tasks = tasks));
+  }
 }
